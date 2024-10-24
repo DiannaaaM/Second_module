@@ -73,6 +73,17 @@ public class Main {
         marcus.setWise(98);
         marcus.setWitty(40);
         marcus.setFullOfCreativity(75);
+        System.out.println(harry.toString());
+        System.out.println(hermiona.toString());
+        System.out.println(ron.toString());
+        System.out.println(draco.toString());
+        System.out.println(grehem.toString());
+        System.out.println(gregory.toString());
+        System.out.println(zaharia.toString());
+        System.out.println(sedrik.toString());
         System.out.println(djastin.toString());
+        System.out.println(chjoy.toString());
+        System.out.println(padma.toString());
+        System.out.println(marcus.toString());
     }
 }
