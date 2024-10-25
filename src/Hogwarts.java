@@ -23,94 +23,24 @@ public abstract class Hogwarts {
         return nameOfStudent;
     }
 
-    public abstract void compare(Hogwarts student);
-
-}
-
-class Gryffindor extends Hogwarts {
-    private int nobility;
-    private int honor;
-    private int bravery;
-
-    public Gryffindor(String nameOfStudent, String areaOfStudent, int powerOfMagic, int nobility, int honor, int bravery) {
-        super(nameOfStudent, areaOfStudent, powerOfMagic);
-        this.nobility = nobility;
-        this.honor = honor;
-        this.bravery = bravery;
+    @Override
+    public String toString() {
+        return "Hogwarts{" +
+                "nameOfStudent='" + nameOfStudent + '\'' +
+                ", areaOfStudent='" + areaOfStudent + '\'' +
+                ", powerOfMagic=" + powerOfMagic +
+                '}';
     }
 
-    @Override
     public void compare(Hogwarts student) {
-        Gryffindor gryffindorStudent = (Gryffindor) student;
-        int sumStudent1 = nobility + honor + bravery;
-        int sumStudent2 = gryffindorStudent.nobility + gryffindorStudent.honor + gryffindorStudent.bravery;
-
-        if (sumStudent1 > sumStudent2) {
-            System.out.println(getNameOfStudent() + " better than " + gryffindorStudent.getNameOfStudent());
-        } else if (sumStudent1 < sumStudent2) {
-            System.out.println(gryffindorStudent.getNameOfStudent() + " better than " + getNameOfStudent());
+        if (this.powerOfMagic > student.powerOfMagic) {
+            System.out.println(getNameOfStudent() + " is more powerful than " + student.getNameOfStudent());
+        } else if (this.powerOfMagic < student.powerOfMagic) {
+            System.out.println(student.getNameOfStudent() + " is more powerful than " + getNameOfStudent());
         } else {
-            System.out.println(gryffindorStudent.getNameOfStudent() + " has similar skills with " + getNameOfStudent());
+            System.out.println(student.getNameOfStudent() + " has similar magic power with " + getNameOfStudent());
         }
     }
+
 }
 
-class Hufflepuff extends Hogwarts {
-    private int hardworking;
-    private int loyal;
-    private int honest;
-
-    public Hufflepuff(String nameOfStudent, String areaOfStudent, int powerOfMagic, int hardworking, int loyal, int honest) {
-        super(nameOfStudent, areaOfStudent, powerOfMagic);
-        this.hardworking = hardworking;
-        this.loyal = loyal;
-        this.honest = honest;
-    }
-
-    @Override
-    public void compare(Hogwarts student) {
-        // Implementation for comparing Hufflepuff students
-    }
-}
-
-class Ravenclaw extends Hogwarts {
-    private int smart;
-    private int wise;
-    private int witty;
-    private int fullOfCreativity;
-
-    public Ravenclaw(String nameOfStudent, String areaOfStudent, int powerOfMagic, int smart, int wise, int witty, int fullOfCreativity) {
-        super(nameOfStudent, areaOfStudent, powerOfMagic);
-        this.smart = smart;
-        this.wise = wise;
-        this.witty = witty;
-        this.fullOfCreativity = fullOfCreativity;
-    }
-
-    @Override
-    public void compare(Hogwarts student) {
-        // Implementation for comparing Ravenclaw students
-    }
-}
-
-class Slytherin extends Hogwarts {
-    private int cunning;
-    private int determination;
-    private int ambition;
-    private int resourcefulness;
-    private int thirstForPower;
-
-    public Slytherin(String nameOfStudent, String areaOfStudent, int powerOfMagic, int cunning, int determination, int ambition, int resourcefulness, int thirstForPower) {
-        super(nameOfStudent, areaOfStudent, powerOfMagic);
-        this.cunning = cunning;
-        this.determination = determination;
-        this.ambition = ambition;
-        this.resourcefulness = resourcefulness;
-        this.thirstForPower = thirstForPower;
-    }
-
-    @Override
-    public void compare(Hogwarts student) {
-        // Implementation for comparing Slytherin students
-    }
-}
